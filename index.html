@@ -10,25 +10,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1e3a8a;          /* Deep Construction Royal Blue */
-            --primary-hover: #1d4ed8;
-            --primary-light: #eff6ff;
-            --accent: #d97706;           /* HB Construction Amber Gold */
-            --accent-hover: #b45309;
-            --secondary: #0f172a;        /* Dark Slate */
+            --primary: #043927;          /* Oregon Ducks Deep Forest Green */
+            --primary-hover: #0a5c36;
+            --primary-light: #e6f4ea;
+            --accent: #fee123;           /* Oregon Ducks Yellow / Gold */
+            --accent-hover: #e5c200;
+            --accent-dark: #856f00;
+            --secondary: #0b1a13;        /* Dark Obsidian Green */
             --success: #10b981;
             --warning: #f59e0b;
             --danger: #ef4444;
-            --bg-main: #f8fafc;
+            --bg-main: #f4f7f5;
             --bg-card: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border: #cbd5e1;
             --radius-lg: 16px;
             --radius-md: 10px;
             --radius-sm: 6px;
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-            --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow: 0 10px 15px -3px rgba(4, 57, 39, 0.08), 0 4px 6px -2px rgba(4, 57, 39, 0.04);
+            --shadow-hover: 0 20px 25px -5px rgba(4, 57, 39, 0.15), 0 10px 10px -5px rgba(4, 57, 39, 0.08);
             --transition: all 0.25s ease;
         }
 
@@ -49,40 +50,17 @@
         /* Top Announcement Bar */
         .top-bar {
             background-color: var(--secondary);
-            color: #94a3b8;
-            padding: 0.4rem 1.5rem;
-            font-size: 0.8rem;
+            color: #cbd5e1;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.85rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 2px solid var(--accent);
         }
 
         .top-bar strong {
-            color: #f8fafc;
-        }
-
-        .role-switcher {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .role-btn {
-            background: rgba(255, 255, 255, 0.12);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 2px 10px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .role-btn.active {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: #fff;
-            font-weight: 700;
+            color: var(--accent);
         }
 
         /* Header & Navigation */
@@ -109,7 +87,7 @@
             gap: 12px;
             font-size: 1.25rem;
             font-weight: 800;
-            color: var(--secondary);
+            color: var(--primary);
             text-decoration: none;
             letter-spacing: -0.5px;
         }
@@ -117,16 +95,16 @@
         .logo-icon {
             width: 42px;
             height: 42px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-left: 4px solid var(--accent);
-            color: white;
+            background: var(--primary);
+            border-left: 5px solid var(--accent);
+            color: var(--accent);
             border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 800;
+            font-weight: 900;
             font-size: 1.1rem;
-            box-shadow: 0 4px 10px rgba(30, 58, 138, 0.25);
+            box-shadow: 0 4px 10px rgba(4, 57, 39, 0.3);
         }
 
         .logo-text {
@@ -138,8 +116,8 @@
             font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--accent);
-            font-weight: 700;
+            color: var(--primary);
+            font-weight: 800;
         }
 
         .user-nav {
@@ -152,12 +130,13 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            background-color: var(--bg-main);
+            background-color: var(--primary-light);
             padding: 6px 14px 6px 6px;
             border-radius: 30px;
-            border: 1px solid var(--border);
+            border: 1px solid rgba(4, 57, 39, 0.2);
             font-size: 0.85rem;
             font-weight: 600;
+            color: var(--primary);
         }
 
         .avatar {
@@ -165,22 +144,23 @@
             height: 32px;
             border-radius: 50%;
             background-color: var(--primary);
-            color: white;
+            color: var(--accent);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.85rem;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         /* Hero Banner */
         .hero {
-            background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
             padding: 2.5rem 1.5rem;
             margin-bottom: 2rem;
             position: relative;
             overflow: hidden;
+            border-bottom: 4px solid var(--accent);
         }
 
         .hero::after {
@@ -190,7 +170,7 @@
             bottom: -50px;
             width: 300px;
             height: 300px;
-            background: rgba(217, 119, 6, 0.08);
+            background: rgba(254, 225, 35, 0.08);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -212,7 +192,7 @@
         }
 
         .hero-title p {
-            color: #94a3b8;
+            color: #cbd5e1;
             font-size: 0.95rem;
         }
 
@@ -223,9 +203,9 @@
         }
 
         .stat-card {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(254, 225, 35, 0.3);
             padding: 0.85rem 1.15rem;
             border-radius: var(--radius-md);
             min-width: 150px;
@@ -234,7 +214,7 @@
         .stat-card span {
             display: block;
             font-size: 0.75rem;
-            color: #cbd5e1;
+            color: #e2e8f0;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 0.25rem;
@@ -242,11 +222,7 @@
 
         .stat-card strong {
             font-size: 1.25rem;
-            color: white;
-        }
-
-        .stat-card.alert strong {
-            color: #fca5a5;
+            color: var(--accent);
         }
 
         /* Container & Navigation Tabs */
@@ -274,7 +250,7 @@
             background: none;
             border: none;
             font-size: 0.95rem;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-muted);
             cursor: pointer;
             border-bottom: 3px solid transparent;
@@ -296,10 +272,11 @@
         }
 
         .tab-btn.manager-tab {
-            color: var(--accent);
+            color: var(--primary);
         }
         .tab-btn.manager-tab.active {
             border-bottom-color: var(--accent);
+            color: var(--primary);
         }
 
         /* Content Sections */
@@ -371,13 +348,14 @@
             position: absolute;
             bottom: 12px;
             right: 12px;
-            background: var(--secondary);
-            color: white;
+            background: var(--primary);
+            color: var(--accent);
             padding: 6px 14px;
             border-radius: 20px;
             font-weight: 800;
             font-size: 1.05rem;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 1px solid var(--accent);
         }
 
         .property-status-tag {
@@ -400,8 +378,8 @@
 
         .property-title {
             font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--secondary);
+            font-weight: 800;
+            color: var(--primary);
             margin-bottom: 0.25rem;
         }
 
@@ -458,8 +436,8 @@
 
         .card-title {
             font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--secondary);
+            font-weight: 800;
+            color: var(--primary);
         }
 
         /* Forms & Inputs */
@@ -482,8 +460,8 @@
         label {
             display: block;
             font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-main);
+            font-weight: 700;
+            color: var(--primary);
             margin-bottom: 0.4rem;
         }
 
@@ -508,7 +486,7 @@
 
         input:focus, select:focus, textarea:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+            box-shadow: 0 0 0 3px rgba(4, 57, 39, 0.15);
         }
 
         textarea {
@@ -525,7 +503,7 @@
             padding: 0.75rem 1.5rem;
             border-radius: var(--radius-md);
             font-size: 0.95rem;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             border: none;
             transition: var(--transition);
@@ -534,20 +512,21 @@
 
         .btn-primary {
             background-color: var(--primary);
-            color: white;
-            box-shadow: 0 4px 10px rgba(30, 58, 138, 0.25);
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(4, 57, 39, 0.25);
         }
 
         .btn-primary:hover {
             background-color: var(--primary-hover);
-            box-shadow: 0 6px 15px rgba(30, 58, 138, 0.35);
+            box-shadow: 0 6px 15px rgba(4, 57, 39, 0.35);
             transform: translateY(-1px);
         }
 
         .btn-accent {
             background-color: var(--accent);
-            color: white;
-            box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
+            color: var(--primary);
+            box-shadow: 0 4px 10px rgba(254, 225, 35, 0.3);
+            border: 1px solid var(--accent-hover);
         }
 
         .btn-accent:hover {
@@ -617,11 +596,22 @@
             display: block;
             font-size: 0.95rem;
             margin-bottom: 0.25rem;
+            color: var(--primary);
         }
 
         .payment-option span {
             font-size: 0.75rem;
             color: var(--text-muted);
+        }
+
+        /* Payment Fee Notice Box */
+        .fee-notice {
+            background-color: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 0.85rem 1rem;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1.25rem;
+            font-size: 0.85rem;
         }
 
         /* Lists & Tables */
@@ -635,6 +625,7 @@
             align-items: center;
             padding: 1rem 0;
             border-bottom: 1px solid var(--border);
+            gap: 10px;
         }
 
         .history-item:last-child {
@@ -663,7 +654,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 23, 42, 0.6);
+            background: rgba(11, 26, 19, 0.7);
             backdrop-filter: blur(4px);
             z-index: 1000;
             display: flex;
@@ -688,7 +679,7 @@
             max-height: 90vh;
             overflow-y: auto;
             padding: 2rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
             transform: scale(0.95);
             transition: transform 0.25s ease;
         }
@@ -719,11 +710,11 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: var(--secondary);
+            background-color: var(--primary);
             color: white;
             padding: 1rem 1.5rem;
             border-radius: var(--radius-md);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
             display: flex;
             align-items: center;
             gap: 12px;
@@ -731,6 +722,7 @@
             transform: translateY(100px);
             opacity: 0;
             transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: 1px solid var(--accent);
         }
 
         .toast.show {
@@ -742,11 +734,13 @@
             width: 24px;
             height: 24px;
             background-color: var(--accent);
+            color: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
+            font-weight: 900;
         }
 
         .upload-box {
@@ -776,15 +770,13 @@
 </head>
 <body>
 
-    <!-- Top Info & Role Toggle Bar -->
+    <!-- Top Announcement Bar -->
     <div class="top-bar">
         <div>
-            <strong>HB Design & Construction</strong> &bull; Premier Property Management Services
+            <strong>HB Design & Construction</strong> &bull; Property Management & Resident Portal
         </div>
-        <div class="role-switcher">
-            <span style="font-size: 0.75rem;">View Mode:</span>
-            <button class="role-btn active" id="role-renter-btn" onclick="setRole('renter')">Renter View</button>
-            <button class="role-btn" id="role-manager-btn" onclick="setRole('manager')">Property Manager View</button>
+        <div>
+            <span id="role-status-badge" class="badge badge-info">Guest View</span>
         </div>
     </div>
 
@@ -799,9 +791,9 @@
                 </div>
             </a>
             <div class="user-nav">
-                <div class="user-badge" id="user-badge-display">
-                    <div class="avatar" id="user-avatar">JD</div>
-                    <span id="user-name-display">Jane Doe (Apt 4B)</span>
+                <div class="user-badge hidden" id="user-badge-display">
+                    <div class="avatar" id="user-avatar">LH</div>
+                    <span id="user-name-display">Levi Hawes (Property Manager)</span>
                 </div>
                 <button class="btn btn-secondary btn-sm" id="auth-btn" onclick="openAuthModal()">Log In / Sign Up</button>
             </div>
@@ -812,21 +804,17 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-title" id="hero-title-box">
-                <h1 id="hero-welcome">Welcome Back, Jane</h1>
-                <p id="hero-subtitle">Highland Park Residences &bull; Unit 4B</p>
+                <h1 id="hero-welcome">Welcome to HB Design & Construction</h1>
+                <p id="hero-subtitle">Browse properties, apply for housing, or pay rent online.</p>
             </div>
             <div class="quick-stats" id="hero-stats">
-                <div class="stat-card alert" id="stat-rent-box">
-                    <span>Rent Due (Oct 1)</span>
-                    <strong id="stat-rent-val">$1,850.00</strong>
+                <div class="stat-card" id="stat-card-1">
+                    <span id="stat-1-label">Listed Properties</span>
+                    <strong id="stat-1-val">0</strong>
                 </div>
-                <div class="stat-card">
-                    <span>Lease Term</span>
-                    <strong>Jul 31, 2027</strong>
-                </div>
-                <div class="stat-card">
-                    <span>Active Requests</span>
-                    <strong id="stat-req-val">1 Open</strong>
+                <div class="stat-card" id="stat-card-2">
+                    <span id="stat-2-label">Applications</span>
+                    <strong id="stat-2-val">0 Pending</strong>
                 </div>
             </div>
         </div>
@@ -840,11 +828,11 @@
                 <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                 Available Properties
             </button>
-            <button class="tab-btn renter-only" id="tab-pay-btn" onclick="switchTab('pay-rent-view')">
+            <button class="tab-btn renter-only hidden" id="tab-pay-btn" onclick="switchTab('pay-rent-view')">
                 <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
                 Pay Rent
             </button>
-            <button class="tab-btn renter-only" id="tab-service-btn" onclick="switchTab('service-view')">
+            <button class="tab-btn renter-only hidden" id="tab-service-btn" onclick="switchTab('service-view')">
                 <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
                 Service Requests
             </button>
@@ -856,7 +844,7 @@
             </button>
             <button class="tab-btn manager-tab manager-only hidden" id="tab-admin-apps" onclick="switchTab('admin-apps-view')">
                 <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                Rental Applications (<span id="app-count-badge">2</span>)
+                Rental Applications (<span id="app-count-badge">0</span>)
             </button>
         </div>
 
@@ -881,19 +869,19 @@
                     <div class="card">
                         <div class="card-header">
                             <h2 class="card-title">Make a Rent Payment</h2>
-                            <span class="badge badge-warning">Due Oct 01</span>
+                            <span class="badge badge-warning">Due 1st of Month</span>
                         </div>
                         <form id="payment-form" onsubmit="handlePayment(event)">
                             <div class="form-group">
-                                <label>Select Payment Amount</label>
+                                <label>Select Rent Balance Amount</label>
                                 <div class="payment-options">
-                                    <div class="payment-option selected" onclick="selectAmount(this, 1850)">
-                                        <strong>Full Balance</strong>
-                                        <span>$1,850.00</span>
+                                    <div class="payment-option selected" onclick="selectAmount(this, 1500)">
+                                        <strong>Full Rent</strong>
+                                        <span>$1,500.00</span>
                                     </div>
-                                    <div class="payment-option" onclick="selectAmount(this, 925)">
-                                        <strong>Half Balance</strong>
-                                        <span>$925.00</span>
+                                    <div class="payment-option" onclick="selectAmount(this, 750)">
+                                        <strong>Half Rent</strong>
+                                        <span>$750.00</span>
                                     </div>
                                     <div class="payment-option" onclick="selectAmount(this, 0, true)">
                                         <strong>Custom</strong>
@@ -903,17 +891,20 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="payment-amount">Payment Amount ($)</label>
-                                <input type="number" id="payment-amount" value="1850.00" min="1" step="0.01" required>
+                                <label for="payment-amount">Base Rent Amount ($)</label>
+                                <input type="number" id="payment-amount" value="1500.00" min="1" step="0.01" oninput="updatePaymentTotals()" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="payment-method">Payment Method</label>
-                                <select id="payment-method" required>
-                                    <option value="bank">Bank Checking (...4821) - Free</option>
-                                    <option value="card">Visa Credit (...9012) - $2.50 fee</option>
-                                    <option value="new">+ Add New Bank Account / Card</option>
+                                <select id="payment-method" onchange="updatePaymentTotals()" required>
+                                    <option value="bank_ach" selected>Direct Bank Transfer / ACH (FREE - $0 Fee)</option>
+                                    <option value="card_debit">Debit / Credit Card (3.5% Processing Fee)</option>
                                 </select>
+                            </div>
+
+                            <div class="fee-notice" id="payment-fee-notice">
+                                <strong>Payment Method Fee:</strong> <span id="fee-text-detail">Direct Bank Transfers have $0 processing fee.</span>
                             </div>
 
                             <div class="form-group">
@@ -921,7 +912,7 @@
                                 <input type="date" id="payment-date" required>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-block">Submit Rent Payment</button>
+                            <button type="submit" class="btn btn-primary btn-block" id="pay-submit-btn">Submit Direct Bank Transfer ($1,500.00)</button>
                         </form>
                     </div>
                 </div>
@@ -934,30 +925,23 @@
                         <div class="history-list">
                             <div class="history-item">
                                 <div class="history-info">
-                                    <strong>Monthly Base Rent</strong>
-                                    <span>Highland Park Apt 4B</span>
+                                    <strong>Base Rent</strong>
+                                    <span id="renter-unit-desc">Monthly Lease Charge</span>
                                 </div>
-                                <div class="history-amount">$1,750.00</div>
+                                <div class="history-amount" id="stmt-base-amount">$1,500.00</div>
                             </div>
                             <div class="history-item">
                                 <div class="history-info">
-                                    <strong>Reserved Garage Space</strong>
-                                    <span>Spot #42</span>
+                                    <strong>Payment Fee</strong>
+                                    <span id="stmt-fee-desc">Direct Bank Transfer</span>
                                 </div>
-                                <div class="history-amount">$75.00</div>
-                            </div>
-                            <div class="history-item">
-                                <div class="history-info">
-                                    <strong>Utility & Trash Fee</strong>
-                                    <span>Flat Rate</span>
-                                </div>
-                                <div class="history-amount">$25.00</div>
+                                <div class="history-amount" id="stmt-fee-amount" style="color: var(--success);">$0.00</div>
                             </div>
                             <div class="history-item" style="border-top: 2px solid var(--border); margin-top: 0.5rem; padding-top: 1rem;">
                                 <div class="history-info">
-                                    <strong>Total Outstanding</strong>
+                                    <strong>Total Charged</strong>
                                 </div>
-                                <div class="history-amount" style="color: var(--primary); font-size: 1.15rem;" id="total-statement-due">$1,850.00</div>
+                                <div class="history-amount" style="color: var(--primary); font-size: 1.15rem;" id="total-statement-due">$1,500.00</div>
                             </div>
                         </div>
                     </div>
@@ -967,16 +951,7 @@
                             <h2 class="card-title">Payment History</h2>
                         </div>
                         <div class="history-list" id="payment-history-list">
-                            <div class="history-item">
-                                <div class="history-info">
-                                    <strong>September Rent</strong>
-                                    <span>Paid Sep 01, 2026</span>
-                                </div>
-                                <div>
-                                    <span class="badge badge-success">Paid</span>
-                                    <div class="history-amount mt-2">$1,850.00</div>
-                                </div>
-                            </div>
+                            <p class="text-sm text-muted">No prior payment transactions recorded.</p>
                         </div>
                     </div>
                 </div>
@@ -1030,7 +1005,7 @@
 
                             <div class="form-group">
                                 <label for="request-desc">Detailed Explanation</label>
-                                <textarea id="request-desc" placeholder="Provide as much detail as possible to help HB Design technicians..." required></textarea>
+                                <textarea id="request-desc" placeholder="Provide details to help HB Design technicians..." required></textarea>
                             </div>
 
                             <div class="form-group">
@@ -1052,7 +1027,7 @@
                             <h2 class="card-title">Your Maintenance Tickets</h2>
                         </div>
                         <div id="ticket-list">
-                            <!-- Tickets populated dynamically -->
+                            <p class="text-sm text-muted">No service requests submitted yet.</p>
                         </div>
                     </div>
                 </div>
@@ -1060,36 +1035,36 @@
         </div>
 
         <!-- TAB 4: PROPERTY MANAGER - MANAGE PROPERTIES -->
-        <div id="admin-properties-view" class="tab-content manager-only">
+        <div id="admin-properties-view" class="tab-content manager-only hidden">
             <div class="grid-2">
                 <div>
                     <div class="card">
                         <div class="card-header">
                             <h2 class="card-title">Add New Property Listing</h2>
-                            <span class="badge badge-info">Property Manager</span>
+                            <span class="badge badge-info">Property Manager Access</span>
                         </div>
                         <form id="add-property-form" onsubmit="handleAddProperty(event)">
                             <div class="form-group">
                                 <label for="prop-title">Property Name / Title</label>
-                                <input type="text" id="prop-title" placeholder="e.g. Sunset Ridge Heights" required>
+                                <input type="text" id="prop-title" placeholder="e.g. Oakwood Luxury Single Family Home" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="prop-address">Full Address</label>
-                                <input type="text" id="prop-address" placeholder="123 Main St, Suite 400, San Francisco, CA" required>
+                                <label for="prop-address">Full Address Name</label>
+                                <input type="text" id="prop-address" placeholder="123 Main St, Eugene, OR" required>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="prop-price">Monthly Rent ($)</label>
-                                    <input type="number" id="prop-price" placeholder="2400" required>
+                                    <input type="number" id="prop-price" placeholder="2200" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="prop-type">Property Type</label>
                                     <select id="prop-type">
+                                        <option value="Single Family Home">Single Family Home</option>
                                         <option value="Apartment">Apartment Complex</option>
                                         <option value="Luxury Condominium">Luxury Condominium</option>
-                                        <option value="Single Family Home">Single Family Home</option>
                                         <option value="Townhouse">Townhouse</option>
                                     </select>
                                 </div>
@@ -1098,7 +1073,7 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="prop-beds">Bedrooms</label>
-                                    <input type="text" id="prop-beds" placeholder="2 Beds" required>
+                                    <input type="text" id="prop-beds" placeholder="3 Beds" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="prop-baths">Bathrooms</label>
@@ -1107,14 +1082,22 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="prop-image">Picture Image URL</label>
-                                <input type="text" id="prop-image" placeholder="https://images.unsplash.com/photo-..." required>
-                                <span class="text-sm text-muted">Paste a high quality image link for the listing.</span>
+                                <label>Upload Photo from Device</label>
+                                <div class="upload-box" onclick="triggerFileInput('prop-photo-file')">
+                                    <span class="text-sm text-muted" id="file-label-prop-photo">Click to upload custom photo from computer/phone</span>
+                                    <input type="file" id="prop-photo-file" accept="image/*" style="display: none;" onchange="handlePhotoUpload(this, 'prop-image')">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="prop-image">Or Picture Image URL</label>
+                                <input type="text" id="prop-image" placeholder="https://images.unsplash.com/photo-...">
+                                <span class="text-sm text-muted">Uploaded file image will take priority over URL.</span>
                             </div>
 
                             <div class="form-group">
                                 <label for="prop-desc">Listing Description</label>
-                                <textarea id="prop-desc" placeholder="Describe the HB Design & Construction craftsmanship, architectural details, neighborhood amenities, etc." required></textarea>
+                                <textarea id="prop-desc" placeholder="Describe the HB Design & Construction craftsmanship, architectural details, amenities, etc." required></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-accent btn-block">+ Publish Property Listing</button>
@@ -1125,7 +1108,7 @@
                 <div>
                     <div class="card">
                         <div class="card-header">
-                            <h2 class="card-title">Manage Existing Properties</h2>
+                            <h2 class="card-title">Manage Listed Properties</h2>
                         </div>
                         <div class="history-list" id="admin-properties-list">
                             <!-- Dynamic admin list -->
@@ -1136,7 +1119,7 @@
         </div>
 
         <!-- TAB 5: PROPERTY MANAGER - VIEW APPLICATIONS -->
-        <div id="admin-apps-view" class="tab-content manager-only">
+        <div id="admin-apps-view" class="tab-content manager-only hidden">
             <div class="card">
                 <div class="card-header">
                     <h2 class="card-title">Submitted Rental Applications</h2>
@@ -1148,6 +1131,76 @@
             </div>
         </div>
     </main>
+
+    <!-- EDIT PROPERTY MODAL -->
+    <div class="modal-overlay" id="edit-property-modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 class="card-title">Edit Property Listing</h3>
+                <button class="close-modal" onclick="closeModal('edit-property-modal')">&times;</button>
+            </div>
+            <form id="edit-property-form" onsubmit="handleSavePropertyEdit(event)">
+                <input type="hidden" id="edit-prop-id">
+
+                <div class="form-group">
+                    <label for="edit-prop-title">Property Title</label>
+                    <input type="text" id="edit-prop-title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-prop-address">Address Name</label>
+                    <input type="text" id="edit-prop-address" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-prop-price">Monthly Rent ($)</label>
+                        <input type="number" id="edit-prop-price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-prop-type">Type</label>
+                        <select id="edit-prop-type">
+                            <option value="Single Family Home">Single Family Home</option>
+                            <option value="Apartment">Apartment Complex</option>
+                            <option value="Luxury Condominium">Luxury Condominium</option>
+                            <option value="Townhouse">Townhouse</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-prop-beds">Bedrooms</label>
+                        <input type="text" id="edit-prop-beds" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-prop-baths">Bathrooms</label>
+                        <input type="text" id="edit-prop-baths" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Upload New Photo</label>
+                    <div class="upload-box" onclick="triggerFileInput('edit-prop-photo-file')">
+                        <span class="text-sm text-muted" id="file-label-edit-photo">Click to choose a new photo file</span>
+                        <input type="file" id="edit-prop-photo-file" accept="image/*" style="display: none;" onchange="handlePhotoUpload(this, 'edit-prop-image')">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-prop-image">Or Photo Image URL</label>
+                    <input type="text" id="edit-prop-image">
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-prop-desc">Listing Description</label>
+                    <textarea id="edit-prop-desc" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-accent btn-block">Save Changes</button>
+            </form>
+        </div>
+    </div>
 
     <!-- APPLICATION MODAL -->
     <div class="modal-overlay" id="apply-modal">
@@ -1167,29 +1220,29 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="applicant-fname">First Name</label>
-                        <input type="text" id="applicant-fname" placeholder="John" required>
+                        <input type="text" id="applicant-fname" placeholder="First Name" required>
                     </div>
                     <div class="form-group">
                         <label for="applicant-lname">Last Name</label>
-                        <input type="text" id="applicant-lname" placeholder="Smith" required>
+                        <input type="text" id="applicant-lname" placeholder="Last Name" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="applicant-email">Email Address</label>
-                        <input type="email" id="applicant-email" placeholder="john@example.com" required>
+                        <input type="email" id="applicant-email" placeholder="your.email@example.com" required>
                     </div>
                     <div class="form-group">
                         <label for="applicant-phone">Phone Number</label>
-                        <input type="tel" id="applicant-phone" placeholder="(555) 019-2831" required>
+                        <input type="tel" id="applicant-phone" placeholder="Phone Number" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="applicant-income">Monthly Gross Income ($)</label>
-                        <input type="number" id="applicant-income" placeholder="6500" required>
+                        <input type="number" id="applicant-income" placeholder="5000" required>
                     </div>
                     <div class="form-group">
                         <label for="applicant-movein">Desired Move-in Date</label>
@@ -1199,7 +1252,7 @@
 
                 <div class="form-group">
                     <label for="applicant-employer">Employer / Occupation</label>
-                    <input type="text" id="applicant-employer" placeholder="Software Engineer at TechCorp" required>
+                    <input type="text" id="applicant-employer" placeholder="Occupation / Company" required>
                 </div>
 
                 <div class="form-group">
@@ -1233,30 +1286,22 @@
 
                 <div class="form-group hidden" id="signup-name-group">
                     <label for="auth-name">Full Name</label>
-                    <input type="text" id="auth-name" placeholder="Alex Morgan">
+                    <input type="text" id="auth-name" placeholder="Full Name">
                 </div>
 
                 <div class="form-group">
                     <label for="auth-email">Email Address</label>
-                    <input type="email" id="auth-email" placeholder="alex@example.com" required>
+                    <input type="email" id="auth-email" placeholder="Enter your email" required>
                 </div>
 
                 <div class="form-group">
                     <label for="auth-phone">Phone Number</label>
-                    <input type="tel" id="auth-phone" placeholder="(555) 234-5678" required>
+                    <input type="tel" id="auth-phone" placeholder="Enter your phone number" required>
                 </div>
 
                 <div class="form-group">
                     <label for="auth-password">Password</label>
                     <input type="password" id="auth-password" placeholder="••••••••" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="auth-role-select">Account Type</label>
-                    <select id="auth-role-select">
-                        <option value="renter">Renter / Resident</option>
-                        <option value="manager">Property Manager (HB Design Staff)</option>
-                    </select>
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-block" id="auth-submit-btn">Log In</button>
@@ -1272,94 +1317,24 @@
 
     <!-- Application Script Logic -->
     <script>
+        // PROPERTY MANAGER CREDENTIALS (LEVI HAWES)
+        const MANAGER_EMAIL = "levihawes0@gmail.com";
+        const MANAGER_PASS = "Dashdog1$";
+
         // GLOBAL STATE STORE
         const state = {
-            currentRole: 'renter', // 'renter' or 'manager'
+            currentRole: 'guest', // 'guest', 'renter', or 'manager'
             user: {
-                name: 'Jane Doe',
-                email: 'jane.doe@example.com',
-                phone: '(555) 839-2019',
-                unit: 'Apt 4B - Highland Park',
-                isLoggedIn: true
+                name: '',
+                email: '',
+                phone: '',
+                role: 'guest',
+                isLoggedIn: false
             },
-            properties: [
-                {
-                    id: 1,
-                    title: "Highland Park Residences",
-                    address: "742 Evergreen Terr, San Francisco, CA",
-                    price: 1850,
-                    type: "Apartment",
-                    beds: "2 Beds",
-                    baths: "2 Baths",
-                    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80",
-                    description: "Built and custom-finished by HB Design & Construction. Features hardwood floors, quartz kitchen island, and energy-efficient climate control."
-                },
-                {
-                    id: 2,
-                    title: "Oakridge Architectural Lofts",
-                    address: "1040 Modernist Way, Austin, TX",
-                    price: 2400,
-                    type: "Luxury Condominium",
-                    beds: "3 Beds",
-                    baths: "2.5 Baths",
-                    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
-                    description: "Modernist design featuring soaring ceilings, concrete accent walls, and floor-to-ceiling glass designed by HB Construction."
-                },
-                {
-                    id: 3,
-                    title: "Skyline Glass Towers",
-                    address: "88 Harbor View Blvd, Seattle, WA",
-                    price: 2100,
-                    type: "Apartment",
-                    beds: "1 Bed",
-                    baths: "1 Bath",
-                    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-                    description: "Waterfront high-rise apartment with premium sound isolation, custom cabinetry, and concierge services."
-                }
-            ],
-            applications: [
-                {
-                    id: 101,
-                    propertyName: "Oakridge Architectural Lofts",
-                    applicantName: "Michael Chang",
-                    email: "m.chang@example.com",
-                    phone: "(555) 492-1029",
-                    income: 7500,
-                    moveIn: "2026-10-01",
-                    employer: "Senior Architect",
-                    status: "Pending Review"
-                },
-                {
-                    id: 102,
-                    propertyName: "Highland Park Residences",
-                    applicantName: "Sarah Jenkins",
-                    email: "sarah.j@example.com",
-                    phone: "(555) 902-3311",
-                    income: 6200,
-                    moveIn: "2026-11-15",
-                    employer: "Product Designer",
-                    status: "Approved"
-                }
-            ],
-            tickets: [
-                {
-                    id: "REQ-8821",
-                    title: "HVAC Unit Noise",
-                    category: "HVAC",
-                    priority: "Medium",
-                    date: "Sep 02, 2026",
-                    status: "In Progress",
-                    desc: "Technician assigned. Scheduled visit tomorrow."
-                }
-            ],
-            payments: [
-                {
-                    title: "September Rent",
-                    date: "Paid Sep 01, 2026",
-                    amount: 1850.00,
-                    status: "Paid"
-                }
-            ]
+            properties: [],
+            applications: [],
+            tickets: [],
+            payments: []
         };
 
         // INITIALIZATION
@@ -1372,43 +1347,65 @@
             // Set payment date default
             const payDate = document.getElementById('payment-date');
             if (payDate) payDate.value = new Date().toISOString().split('T')[0];
+
+            updatePaymentTotals();
         });
 
-        // VIEW & ROLE SWITCHING
-        function setRole(role) {
+        // VIEW & ROLE ROUTING
+        function applyUserRole(role) {
             state.currentRole = role;
-            document.getElementById('role-renter-btn').classList.toggle('active', role === 'renter');
-            document.getElementById('role-manager-btn').classList.toggle('active', role === 'manager');
-
             const renterOnly = document.querySelectorAll('.renter-only');
             const managerOnly = document.querySelectorAll('.manager-only');
+            const roleBadge = document.getElementById('role-status-badge');
 
             if (role === 'manager') {
                 renterOnly.forEach(el => el.classList.add('hidden'));
                 managerOnly.forEach(el => el.classList.remove('hidden'));
                 
+                roleBadge.className = "badge badge-warning";
+                roleBadge.innerText = "Property Manager Access";
+
                 // Update Hero
-                document.getElementById('hero-welcome').innerText = "Property Manager Dashboard";
-                document.getElementById('hero-subtitle').innerText = "HB Design & Construction Staff Portal";
-                document.getElementById('stat-rent-box').querySelector('span').innerText = "Active Properties";
-                document.getElementById('stat-rent-val').innerText = state.properties.length;
-                document.getElementById('stat-req-val').innerText = `${state.applications.length} Pending`;
+                document.getElementById('hero-welcome').innerText = `Welcome Back, Levi Hawes`;
+                document.getElementById('hero-subtitle').innerText = "HB Design & Construction Property Management Staff Portal";
+                document.getElementById('stat-1-label').innerText = "Active Properties";
+                document.getElementById('stat-1-val').innerText = state.properties.length;
+                document.getElementById('stat-2-label').innerText = "Pending Applications";
+                document.getElementById('stat-2-val').innerText = `${state.applications.filter(a => a.status === 'Pending Review').length}`;
 
                 switchTab('admin-properties-view');
-                showToast("Switched to Property Manager View");
-            } else {
+            } else if (role === 'renter') {
                 renterOnly.forEach(el => el.classList.remove('hidden'));
                 managerOnly.forEach(el => el.classList.add('hidden'));
 
+                roleBadge.className = "badge badge-success";
+                roleBadge.innerText = "Resident Portal";
+
                 // Update Hero
-                document.getElementById('hero-welcome').innerText = `Welcome Back, ${state.user.name.split(' ')[0]}`;
-                document.getElementById('hero-subtitle').innerText = `${state.user.unit}`;
-                document.getElementById('stat-rent-box').querySelector('span').innerText = "Rent Due (Oct 1)";
-                document.getElementById('stat-rent-val').innerText = "$1,850.00";
-                document.getElementById('stat-req-val').innerText = `${state.tickets.length} Open`;
+                document.getElementById('hero-welcome').innerText = `Welcome, ${state.user.name || 'Resident'}`;
+                document.getElementById('hero-subtitle').innerText = "HB Design & Construction Resident Portal";
+                document.getElementById('stat-1-label').innerText = "Rent Status";
+                document.getElementById('stat-1-val').innerText = "Due 1st";
+                document.getElementById('stat-2-label').innerText = "Open Service Requests";
+                document.getElementById('stat-2-val').innerText = `${state.tickets.length}`;
 
                 switchTab('properties-view');
-                showToast("Switched to Renter View");
+            } else {
+                // Guest mode
+                renterOnly.forEach(el => el.classList.add('hidden'));
+                managerOnly.forEach(el => el.classList.add('hidden'));
+
+                roleBadge.className = "badge badge-info";
+                roleBadge.innerText = "Guest View";
+
+                document.getElementById('hero-welcome').innerText = "Welcome to HB Design & Construction";
+                document.getElementById('hero-subtitle').innerText = "Browse properties, apply for housing, or pay rent online.";
+                document.getElementById('stat-1-label').innerText = "Listed Properties";
+                document.getElementById('stat-1-val').innerText = state.properties.length;
+                document.getElementById('stat-2-label').innerText = "Portal Status";
+                document.getElementById('stat-2-val').innerText = "Active";
+
+                switchTab('properties-view');
             }
         }
 
@@ -1431,12 +1428,22 @@
         // RENDER FUNCTIONS
         function renderProperties() {
             const container = document.getElementById('properties-grid');
+            if (state.properties.length === 0) {
+                container.innerHTML = `
+                    <div class="card" style="grid-column: 1 / -1; text-align: center; padding: 3rem 1.5rem;">
+                        <h3 class="card-title mb-4">No Properties Listed Yet</h3>
+                        <p class="text-muted text-sm">Property managers can log in with manager credentials to publish new property listings with custom photos and descriptions.</p>
+                    </div>
+                `;
+                return;
+            }
+
             container.innerHTML = state.properties.map(prop => `
                 <div class="property-card">
                     <div class="property-img-wrap">
-                        <img src="${prop.image}" alt="${prop.title}" class="property-img" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80'">
+                        <img src="${prop.image || 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80'}" alt="${prop.title}" class="property-img" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80'">
                         <span class="property-status-tag badge-success badge">Available</span>
-                        <div class="property-price-tag">$${prop.price.toLocaleString()}/mo</div>
+                        <div class="property-price-tag">$${Number(prop.price).toLocaleString()}/mo</div>
                     </div>
                     <div class="property-body">
                         <h3 class="property-title">${prop.title}</h3>
@@ -1458,13 +1465,21 @@
 
         function renderAdminPropertiesList() {
             const container = document.getElementById('admin-properties-list');
+            if (state.properties.length === 0) {
+                container.innerHTML = '<p class="text-sm text-muted">You have not added any properties yet. Use the form on the left to add your first property listing.</p>';
+                return;
+            }
+
             container.innerHTML = state.properties.map(p => `
                 <div class="history-item">
                     <div class="history-info">
                         <strong>${p.title}</strong>
-                        <span>${p.address} &bull; $${p.price}/mo</span>
+                        <span>${p.address} &bull; $${Number(p.price).toLocaleString()}/mo</span>
                     </div>
-                    <button class="btn btn-secondary btn-sm" onclick="removeProperty(${p.id})">Remove</button>
+                    <div style="display: flex; gap: 6px;">
+                        <button class="btn btn-secondary btn-sm" onclick="openEditPropertyModal(${p.id})">Edit</button>
+                        <button class="btn btn-secondary btn-sm" onclick="removeProperty(${p.id})">Remove</button>
+                    </div>
                 </div>
             `).join('');
         }
@@ -1481,7 +1496,7 @@
             container.innerHTML = state.applications.map(app => `
                 <div class="card" style="box-shadow:none; border:1px solid var(--border); padding: 1.25rem; margin-bottom:1rem;">
                     <div class="flex-between mb-4">
-                        <span class="badge ${app.status === 'Approved' ? 'badge-success' : 'badge-warning'}">${app.status}</span>
+                        <span class="badge ${app.status === 'Approved' ? 'badge-success' : (app.status === 'Rejected' ? 'badge-danger' : 'badge-warning')}">${app.status}</span>
                         <span class="text-sm text-muted">Applied for: <strong>${app.propertyName}</strong></span>
                     </div>
                     <h3 style="font-size:1.1rem; font-weight:700;">${app.applicantName}</h3>
@@ -1502,6 +1517,11 @@
 
         function renderTickets() {
             const container = document.getElementById('ticket-list');
+            if (state.tickets.length === 0) {
+                container.innerHTML = '<p class="text-sm text-muted">No service requests submitted yet.</p>';
+                return;
+            }
+
             container.innerHTML = state.tickets.map(t => `
                 <div class="card" style="box-shadow:none; border:1px solid var(--border); padding: 1.25rem; margin-bottom: 1rem;">
                     <div class="flex-between mb-4">
@@ -1513,6 +1533,52 @@
                     <p class="text-sm mt-2">${t.desc}</p>
                 </div>
             `).join('');
+        }
+
+        // DYNAMIC PAYMENT CALCULATION (ACH BANK VS CARD CHARGE)
+        function updatePaymentTotals() {
+            const baseAmount = parseFloat(document.getElementById('payment-amount').value) || 0;
+            const method = document.getElementById('payment-method').value;
+            
+            let fee = 0;
+            let feeNoticeText = "";
+            let methodText = "";
+
+            if (method === "card_debit") {
+                fee = baseAmount * 0.035; // 3.5% Card Fee
+                feeNoticeText = "Credit/Debit Card payments incur a 3.5% processing fee ($" + fee.toFixed(2) + ").";
+                methodText = "Card Processing Surcharge (3.5%)";
+            } else {
+                fee = 0;
+                feeNoticeText = "Direct Bank Transfers (ACH) have a $0.00 processing fee!";
+                methodText = "Direct Bank Transfer (ACH)";
+            }
+
+            const total = baseAmount + fee;
+
+            document.getElementById('fee-text-detail').innerText = feeNoticeText;
+            document.getElementById('stmt-base-amount').innerText = "$" + baseAmount.toFixed(2);
+            document.getElementById('stmt-fee-desc').innerText = methodText;
+            document.getElementById('stmt-fee-amount').innerText = "$" + fee.toFixed(2);
+            document.getElementById('stmt-fee-amount').style.color = fee > 0 ? "var(--danger)" : "var(--success)";
+            document.getElementById('total-statement-due').innerText = "$" + total.toFixed(2);
+            
+            const submitBtn = document.getElementById('pay-submit-btn');
+            submitBtn.innerText = method === "card_debit" ? 
+                `Submit Card Payment ($${total.toFixed(2)})` : 
+                `Submit Direct Bank Transfer ($${total.toFixed(2)})`;
+        }
+
+        // PHOTO UPLOAD HANDLER
+        function handlePhotoUpload(input, targetInputId) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById(targetInputId).value = e.target.result;
+                    showToast("Photo processed successfully!");
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
         }
 
         // HANDLERS & ACTIONS
@@ -1534,13 +1600,57 @@
             renderProperties();
             renderAdminPropertiesList();
             document.getElementById('add-property-form').reset();
+            document.getElementById('file-label-prop-photo').innerText = "Click to upload custom photo from computer/phone";
+            
+            // Update Manager Hero Stats
+            document.getElementById('stat-1-val').innerText = state.properties.length;
             showToast("New property published to HB listings!");
+        }
+
+        function openEditPropertyModal(id) {
+            const prop = state.properties.find(p => p.id === id);
+            if (!prop) return;
+
+            document.getElementById('edit-prop-id').value = prop.id;
+            document.getElementById('edit-prop-title').value = prop.title;
+            document.getElementById('edit-prop-address').value = prop.address;
+            document.getElementById('edit-prop-price').value = prop.price;
+            document.getElementById('edit-prop-type').value = prop.type;
+            document.getElementById('edit-prop-beds').value = prop.beds;
+            document.getElementById('edit-prop-baths').value = prop.baths;
+            document.getElementById('edit-prop-image').value = prop.image;
+            document.getElementById('edit-prop-desc').value = prop.description;
+
+            openModal('edit-property-modal');
+        }
+
+        function handleSavePropertyEdit(e) {
+            e.preventDefault();
+            const id = parseInt(document.getElementById('edit-prop-id').value);
+            const prop = state.properties.find(p => p.id === id);
+
+            if (prop) {
+                prop.title = document.getElementById('edit-prop-title').value;
+                prop.address = document.getElementById('edit-prop-address').value;
+                prop.price = parseFloat(document.getElementById('edit-prop-price').value);
+                prop.type = document.getElementById('edit-prop-type').value;
+                prop.beds = document.getElementById('edit-prop-beds').value;
+                prop.baths = document.getElementById('edit-prop-baths').value;
+                prop.image = document.getElementById('edit-prop-image').value;
+                prop.description = document.getElementById('edit-prop-desc').value;
+
+                renderProperties();
+                renderAdminPropertiesList();
+                closeModal('edit-property-modal');
+                showToast("Property updated successfully!");
+            }
         }
 
         function removeProperty(id) {
             state.properties = state.properties.filter(p => p.id !== id);
             renderProperties();
             renderAdminPropertiesList();
+            document.getElementById('stat-1-val').innerText = state.properties.length;
             showToast("Property removed.");
         }
 
@@ -1551,8 +1661,8 @@
             document.getElementById('app-target-property-id').value = prop.id;
             document.getElementById('app-target-property-name').value = `${prop.title} ($${prop.price}/mo)`;
             
-            // Pre-fill user details if logged in
-            if (state.user.isLoggedIn) {
+            // Pre-fill user details if logged in as renter
+            if (state.user.isLoggedIn && state.user.role === 'renter') {
                 const names = state.user.name.split(' ');
                 document.getElementById('applicant-fname').value = names[0] || '';
                 document.getElementById('applicant-lname').value = names[1] || '';
@@ -1593,18 +1703,25 @@
             if (app) {
                 app.status = status;
                 renderApplications();
+                if (state.currentRole === 'manager') {
+                    document.getElementById('stat-2-val').innerText = `${state.applications.filter(a => a.status === 'Pending Review').length}`;
+                }
                 showToast(`Application marked as ${status}`);
             }
         }
 
         function handlePayment(e) {
             e.preventDefault();
-            const amount = document.getElementById('payment-amount').value;
+            const baseAmount = parseFloat(document.getElementById('payment-amount').value) || 0;
+            const method = document.getElementById('payment-method').value;
+            const fee = method === "card_debit" ? baseAmount * 0.035 : 0;
+            const total = baseAmount + fee;
+            const methodLabel = method === "card_debit" ? "Card Payment (+3.5% fee)" : "Bank Transfer (ACH)";
             
             state.payments.unshift({
-                title: "Rent Payment",
+                title: "Rent Payment via " + methodLabel,
                 date: "Paid Today",
-                amount: parseFloat(amount),
+                amount: total,
                 status: "Paid"
             });
 
@@ -1614,17 +1731,21 @@
                 <div class="history-item">
                     <div class="history-info">
                         <strong>Rent Payment</strong>
-                        <span>Paid Today</span>
+                        <span>${methodLabel}</span>
                     </div>
                     <div>
                         <span class="badge badge-success">Paid</span>
-                        <div class="history-amount mt-2">$${parseFloat(amount).toFixed(2)}</div>
+                        <div class="history-amount mt-2">$${total.toFixed(2)}</div>
                     </div>
                 </div>
             `;
-            container.innerHTML = itemHtml + container.innerHTML;
+            if (state.payments.length === 1) {
+                container.innerHTML = itemHtml;
+            } else {
+                container.innerHTML = itemHtml + container.innerHTML;
+            }
             document.getElementById('total-statement-due').innerText = "$0.00";
-            showToast(`Payment of $${amount} successfully processed!`);
+            showToast(`Payment of $${total.toFixed(2)} processed via ${methodLabel}!`);
         }
 
         function handleServiceRequest(e) {
@@ -1647,6 +1768,9 @@
             state.tickets.unshift(ticket);
             renderTickets();
             document.getElementById('service-form').reset();
+            if (state.currentRole === 'renter') {
+                document.getElementById('stat-2-val').innerText = `${state.tickets.length}`;
+            }
             showToast("Maintenance ticket submitted!");
         }
 
@@ -1661,6 +1785,7 @@
                 amountInput.value = '';
                 amountInput.focus();
             }
+            updatePaymentTotals();
         }
 
         // AUTHENTICATION LOGIC
@@ -1670,33 +1795,67 @@
             document.getElementById('auth-tab-signup').classList.toggle('active', mode === 'signup');
             
             document.getElementById('signup-name-group').classList.toggle('hidden', mode === 'login');
-            document.getElementById('auth-modal-title').innerText = mode === 'login' ? "Log In to HB Portal" : "Create HB Resident/Manager Account";
+            document.getElementById('auth-modal-title').innerText = mode === 'login' ? "Log In to HB Portal" : "Create HB Resident Account";
             document.getElementById('auth-submit-btn').innerText = mode === 'login' ? "Log In" : "Create Account";
         }
 
         function handleAuthSubmit(e) {
             e.preventDefault();
-            const email = document.getElementById('auth-email').value;
-            const phone = document.getElementById('auth-phone').value;
-            const role = document.getElementById('auth-role-select').value;
+            const email = document.getElementById('auth-email').value.trim();
+            const phone = document.getElementById('auth-phone').value.trim();
+            const pass = document.getElementById('auth-password').value;
             const mode = document.getElementById('auth-mode').value;
-            const name = mode === 'signup' ? document.getElementById('auth-name').value : email.split('@')[0];
 
+            // Check if Property Manager
+            if (email.toLowerCase() === MANAGER_EMAIL.toLowerCase() && pass === MANAGER_PASS) {
+                state.user = {
+                    name: 'Levi Hawes',
+                    email: email,
+                    phone: phone || "541-912-8084",
+                    role: 'manager',
+                    isLoggedIn: true
+                };
+
+                document.getElementById('user-badge-display').classList.remove('hidden');
+                document.getElementById('user-name-display').innerText = "Levi Hawes (Property Manager)";
+                document.getElementById('user-avatar').innerText = "LH";
+                document.getElementById('auth-btn').innerText = "Log Out";
+                document.getElementById('auth-btn').setAttribute('onclick', 'handleLogout()');
+
+                closeModal('auth-modal');
+                applyUserRole('manager');
+                showToast("Logged in as Property Manager!");
+                return;
+            }
+
+            // Otherwise, set as Renter (GUARDRAIL: Never give property manager access to renters)
+            const name = mode === 'signup' ? document.getElementById('auth-name').value : (email.split('@')[0] || 'Resident');
             state.user = {
                 name: name,
                 email: email,
                 phone: phone,
-                unit: role === 'manager' ? "HB Staff Member" : "Apt 4B - Highland Park",
+                role: 'renter',
                 isLoggedIn: true
             };
 
-            // Update Header Display
-            document.getElementById('user-name-display').innerText = `${state.user.name} (${state.user.unit})`;
+            document.getElementById('user-badge-display').classList.remove('hidden');
+            document.getElementById('user-name-display').innerText = `${state.user.name} (Renter)`;
             document.getElementById('user-avatar').innerText = state.user.name.substring(0, 2).toUpperCase();
+            document.getElementById('auth-btn').innerText = "Log Out";
+            document.getElementById('auth-btn').setAttribute('onclick', 'handleLogout()');
 
             closeModal('auth-modal');
-            setRole(role);
+            applyUserRole('renter');
             showToast(`Welcome, ${state.user.name}!`);
+        }
+
+        function handleLogout() {
+            state.user = { name: '', email: '', phone: '', role: 'guest', isLoggedIn: false };
+            document.getElementById('user-badge-display').classList.add('hidden');
+            document.getElementById('auth-btn').innerText = "Log In / Sign Up";
+            document.getElementById('auth-btn').setAttribute('onclick', 'openAuthModal()');
+            applyUserRole('guest');
+            showToast("Logged out successfully.");
         }
 
         // HELPERS
