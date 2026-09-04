@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haven Living | Resident & Applicant Portal</title>
+    <title>HB Design & Construction | Property Management & Resident Portal</title>
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
+            --primary: #1e3a8a;          /* Deep Construction Royal Blue */
             --primary-hover: #1d4ed8;
             --primary-light: #eff6ff;
-            --secondary: #0f172a;
-            --accent: #10b981;
+            --accent: #d97706;           /* HB Construction Amber Gold */
+            --accent-hover: #b45309;
+            --secondary: #0f172a;        /* Dark Slate */
+            --success: #10b981;
             --warning: #f59e0b;
             --danger: #ef4444;
             --bg-main: #f8fafc;
@@ -44,6 +46,45 @@
             padding-bottom: 60px;
         }
 
+        /* Top Announcement Bar */
+        .top-bar {
+            background-color: var(--secondary);
+            color: #94a3b8;
+            padding: 0.4rem 1.5rem;
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar strong {
+            color: #f8fafc;
+        }
+
+        .role-switcher {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .role-btn {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .role-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+            font-weight: 700;
+        }
+
         /* Header & Navigation */
         header {
             background-color: var(--bg-card);
@@ -65,8 +106,8 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.35rem;
+            gap: 12px;
+            font-size: 1.25rem;
             font-weight: 800;
             color: var(--secondary);
             text-decoration: none;
@@ -74,23 +115,37 @@
         }
 
         .logo-icon {
-            width: 38px;
-            height: 38px;
-            background: linear-gradient(135deg, var(--primary), #3b82f6);
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-left: 4px solid var(--accent);
             color: white;
-            border-radius: var(--radius-md);
+            border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(30, 58, 138, 0.25);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            font-weight: 700;
         }
 
         .user-nav {
             display: flex;
             align-items: center;
-            gap: 1.25rem;
+            gap: 1rem;
         }
 
         .user-badge {
@@ -101,7 +156,7 @@
             padding: 6px 14px 6px 6px;
             border-radius: 30px;
             border: 1px solid var(--border);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
         }
 
@@ -124,6 +179,20 @@
             color: white;
             padding: 2.5rem 1.5rem;
             margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            right: -50px;
+            bottom: -50px;
+            width: 300px;
+            height: 300px;
+            background: rgba(217, 119, 6, 0.08);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
         .hero-container {
@@ -138,7 +207,7 @@
 
         .hero-title h1 {
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 0.25rem;
         }
 
@@ -149,7 +218,7 @@
 
         .quick-stats {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
@@ -157,14 +226,14 @@
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 1rem 1.25rem;
+            padding: 0.85rem 1.15rem;
             border-radius: var(--radius-md);
-            min-width: 160px;
+            min-width: 150px;
         }
 
         .stat-card span {
             display: block;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #cbd5e1;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -172,7 +241,7 @@
         }
 
         .stat-card strong {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: white;
         }
 
@@ -201,7 +270,7 @@
         }
 
         .tab-btn {
-            padding: 0.85rem 1.5rem;
+            padding: 0.85rem 1.25rem;
             background: none;
             border: none;
             font-size: 0.95rem;
@@ -224,6 +293,13 @@
         .tab-btn.active {
             color: var(--primary);
             border-bottom-color: var(--primary);
+        }
+
+        .tab-btn.manager-tab {
+            color: var(--accent);
+        }
+        .tab-btn.manager-tab.active {
+            border-bottom-color: var(--accent);
         }
 
         /* Content Sections */
@@ -258,6 +334,107 @@
             .grid-2 {
                 grid-template-columns: 1fr;
             }
+        }
+
+        /* Property Cards Styling */
+        .property-card {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .property-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .property-img-wrap {
+            height: 200px;
+            width: 100%;
+            position: relative;
+            background-color: #e2e8f0;
+            overflow: hidden;
+        }
+
+        .property-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .property-price-tag {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: var(--secondary);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .property-status-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .property-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .property-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .property-address {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .property-specs {
+            display: flex;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .property-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex-grow: 1;
         }
 
         /* UI Cards */
@@ -315,6 +492,7 @@
         input[type="number"],
         input[type="date"],
         input[type="tel"],
+        input[type="password"],
         select,
         textarea {
             width: 100%;
@@ -330,7 +508,7 @@
 
         input:focus, select:focus, textarea:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
         }
 
         textarea {
@@ -357,12 +535,23 @@
         .btn-primary {
             background-color: var(--primary);
             color: white;
-            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 4px 10px rgba(30, 58, 138, 0.25);
         }
 
         .btn-primary:hover {
             background-color: var(--primary-hover);
-            box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 6px 15px rgba(30, 58, 138, 0.35);
+            transform: translateY(-1px);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: white;
+            box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
+        }
+
+        .btn-accent:hover {
+            background-color: var(--accent-hover);
             transform: translateY(-1px);
         }
 
@@ -374,6 +563,12 @@
 
         .btn-secondary:hover {
             background-color: #e2e8f0;
+        }
+
+        .btn-sm {
+            padding: 0.4rem 0.85rem;
+            font-size: 0.8rem;
+            border-radius: var(--radius-sm);
         }
 
         .btn-block {
@@ -413,12 +608,7 @@
             transition: var(--transition);
         }
 
-        .payment-option:hover {
-            border-color: var(--primary);
-            background-color: var(--primary-light);
-        }
-
-        .payment-option.selected {
+        .payment-option:hover, .payment-option.selected {
             border-color: var(--primary);
             background-color: var(--primary-light);
         }
@@ -466,6 +656,64 @@
             font-weight: 700;
         }
 
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+            padding: 1rem;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-card {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 550px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transform: scale(0.95);
+            transition: transform 0.25s ease;
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
         /* Toast Notifications */
         .toast {
             position: fixed;
@@ -479,7 +727,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            z-index: 1000;
+            z-index: 2000;
             transform: translateY(100px);
             opacity: 0;
             transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -501,77 +749,9 @@
             font-size: 0.8rem;
         }
 
-        /* Multi-step Application styling */
-        .step-indicator {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .step-indicator::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background-color: var(--border);
-            z-index: 1;
-            transform: translateY(-50%);
-        }
-
-        .step {
-            position: relative;
-            z-index: 2;
-            background-color: var(--bg-card);
-            padding: 0 0.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .step-number {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background-color: var(--bg-main);
-            border: 2px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            transition: var(--transition);
-        }
-
-        .step.active .step-number {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            color: white;
-        }
-
-        .step.completed .step-number {
-            background-color: var(--accent);
-            border-color: var(--accent);
-            color: white;
-        }
-
-        .step-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--text-muted);
-        }
-
-        .step.active .step-label {
-            color: var(--primary);
-        }
-
         .upload-box {
             border: 2px dashed var(--border);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: var(--radius-md);
             text-align: center;
             cursor: pointer;
@@ -591,22 +771,39 @@
         .mt-4 { margin-top: 1rem; }
         .mb-4 { margin-bottom: 1rem; }
         .flex-between { display: flex; justify-content: space-between; align-items: center; }
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
+
+    <!-- Top Info & Role Toggle Bar -->
+    <div class="top-bar">
+        <div>
+            <strong>HB Design & Construction</strong> &bull; Premier Property Management Services
+        </div>
+        <div class="role-switcher">
+            <span style="font-size: 0.75rem;">View Mode:</span>
+            <button class="role-btn active" id="role-renter-btn" onclick="setRole('renter')">Renter View</button>
+            <button class="role-btn" id="role-manager-btn" onclick="setRole('manager')">Property Manager View</button>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
     <header>
         <div class="header-container">
             <a href="#" class="logo">
-                <div class="logo-icon">H</div>
-                <span>Haven Living</span>
+                <div class="logo-icon">HB</div>
+                <div class="logo-text">
+                    <span>HB Design & Construction</span>
+                    <span class="logo-subtitle">Property Management</span>
+                </div>
             </a>
             <div class="user-nav">
-                <div class="user-badge">
-                    <div class="avatar">JD</div>
-                    <span>Jane Doe (Apt 4B)</span>
+                <div class="user-badge" id="user-badge-display">
+                    <div class="avatar" id="user-avatar">JD</div>
+                    <span id="user-name-display">Jane Doe (Apt 4B)</span>
                 </div>
+                <button class="btn btn-secondary btn-sm" id="auth-btn" onclick="openAuthModal()">Log In / Sign Up</button>
             </div>
         </div>
     </header>
@@ -614,51 +811,71 @@
     <!-- Hero Banner -->
     <section class="hero">
         <div class="hero-container">
-            <div class="hero-title">
-                <h1>Welcome Back, Jane</h1>
-                <p>Highland Park Apartments &bull; Unit 4B</p>
+            <div class="hero-title" id="hero-title-box">
+                <h1 id="hero-welcome">Welcome Back, Jane</h1>
+                <p id="hero-subtitle">Highland Park Residences &bull; Unit 4B</p>
             </div>
-            <div class="quick-stats">
-                <div class="stat-card alert">
+            <div class="quick-stats" id="hero-stats">
+                <div class="stat-card alert" id="stat-rent-box">
                     <span>Rent Due (Oct 1)</span>
-                    <strong>$1,850.00</strong>
+                    <strong id="stat-rent-val">$1,850.00</strong>
                 </div>
                 <div class="stat-card">
-                    <span>Lease Ends</span>
-                    <strong>July 31, 2027</strong>
+                    <span>Lease Term</span>
+                    <strong>Jul 31, 2027</strong>
                 </div>
                 <div class="stat-card">
                     <span>Active Requests</span>
-                    <strong>1 Open</strong>
+                    <strong id="stat-req-val">1 Open</strong>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Navigation & Interactive Dashboard -->
+    <!-- Main Navigation & Dashboard Tabs -->
     <main class="main-container">
         <!-- Navigation Tabs -->
         <div class="nav-tabs">
-            <button class="tab-btn active" onclick="switchTab('pay-rent')">
+            <button class="tab-btn active" id="tab-listings-btn" onclick="switchTab('properties-view')">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                Available Properties
+            </button>
+            <button class="tab-btn renter-only" id="tab-pay-btn" onclick="switchTab('pay-rent-view')">
                 <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
                 Pay Rent
             </button>
-            <button class="tab-btn" onclick="switchTab('service-request')">
+            <button class="tab-btn renter-only" id="tab-service-btn" onclick="switchTab('service-view')">
                 <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
                 Service Requests
             </button>
-            <button class="tab-btn" onclick="switchTab('apply-housing')">
-                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                Apply for Housing
+            
+            <!-- Property Manager Tabs -->
+            <button class="tab-btn manager-tab manager-only hidden" id="tab-admin-properties" onclick="switchTab('admin-properties-view')">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                Manage Properties
             </button>
-            <button class="tab-btn" onclick="switchTab('account')">
-                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                Lease Details
+            <button class="tab-btn manager-tab manager-only hidden" id="tab-admin-apps" onclick="switchTab('admin-apps-view')">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                Rental Applications (<span id="app-count-badge">2</span>)
             </button>
         </div>
 
-        <!-- 1. PAY RENT TAB -->
-        <div id="pay-rent" class="tab-content active">
+        <!-- TAB 1: AVAILABLE PROPERTIES (PUBLIC & RENTER) -->
+        <div id="properties-view" class="tab-content active">
+            <div class="flex-between mb-4">
+                <div>
+                    <h2 class="card-title">Properties Managed by HB Design & Construction</h2>
+                    <p class="text-sm text-muted">High-quality residential and commercial properties built and managed to perfection.</p>
+                </div>
+            </div>
+
+            <div class="grid-cards" id="properties-grid">
+                <!-- Dynamic Property Cards Rendered Here -->
+            </div>
+        </div>
+
+        <!-- TAB 2: PAY RENT (RENTER PORTAL) -->
+        <div id="pay-rent-view" class="tab-content">
             <div class="grid-2">
                 <div>
                     <div class="card">
@@ -694,8 +911,8 @@
                                 <label for="payment-method">Payment Method</label>
                                 <select id="payment-method" required>
                                     <option value="bank">Bank Checking (...4821) - Free</option>
-                                    <option value="card">Visa Debit (...9012) - $2.50 fee</option>
-                                    <option value="new">Add New Payment Method</option>
+                                    <option value="card">Visa Credit (...9012) - $2.50 fee</option>
+                                    <option value="new">+ Add New Bank Account / Card</option>
                                 </select>
                             </div>
 
@@ -704,7 +921,7 @@
                                 <input type="date" id="payment-date" required>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-block">Submit Payment Now</button>
+                            <button type="submit" class="btn btn-primary btn-block">Submit Rent Payment</button>
                         </form>
                     </div>
                 </div>
@@ -712,58 +929,48 @@
                 <div>
                     <div class="card">
                         <div class="card-header">
-                            <h2 class="card-title">Payment Breakdown</h2>
+                            <h2 class="card-title">Statement Breakdown</h2>
                         </div>
                         <div class="history-list">
                             <div class="history-item">
                                 <div class="history-info">
-                                    <strong>Base Rent</strong>
-                                    <span>Monthly charge</span>
+                                    <strong>Monthly Base Rent</strong>
+                                    <span>Highland Park Apt 4B</span>
                                 </div>
                                 <div class="history-amount">$1,750.00</div>
                             </div>
                             <div class="history-item">
                                 <div class="history-info">
-                                    <strong>Reserved Parking</strong>
-                                    <span>Space #42</span>
+                                    <strong>Reserved Garage Space</strong>
+                                    <span>Spot #42</span>
                                 </div>
                                 <div class="history-amount">$75.00</div>
                             </div>
                             <div class="history-item">
                                 <div class="history-info">
-                                    <strong>Trash & Recycling</strong>
-                                    <span>Flat fee</span>
+                                    <strong>Utility & Trash Fee</strong>
+                                    <span>Flat Rate</span>
                                 </div>
                                 <div class="history-amount">$25.00</div>
                             </div>
                             <div class="history-item" style="border-top: 2px solid var(--border); margin-top: 0.5rem; padding-top: 1rem;">
                                 <div class="history-info">
-                                    <strong>Total Amount Due</strong>
+                                    <strong>Total Outstanding</strong>
                                 </div>
-                                <div class="history-amount" style="color: var(--primary); font-size: 1.1rem;">$1,850.00</div>
+                                <div class="history-amount" style="color: var(--primary); font-size: 1.15rem;" id="total-statement-due">$1,850.00</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="card">
                         <div class="card-header">
-                            <h2 class="card-title">Recent History</h2>
+                            <h2 class="card-title">Payment History</h2>
                         </div>
-                        <div class="history-list">
+                        <div class="history-list" id="payment-history-list">
                             <div class="history-item">
                                 <div class="history-info">
                                     <strong>September Rent</strong>
-                                    <span>Paid on Sep 01, 2026</span>
-                                </div>
-                                <div>
-                                    <span class="badge badge-success">Paid</span>
-                                    <div class="history-amount mt-2">$1,850.00</div>
-                                </div>
-                            </div>
-                            <div class="history-item">
-                                <div class="history-info">
-                                    <strong>August Rent</strong>
-                                    <span>Paid on Aug 01, 2026</span>
+                                    <span>Paid Sep 01, 2026</span>
                                 </div>
                                 <div>
                                     <span class="badge badge-success">Paid</span>
@@ -776,8 +983,8 @@
             </div>
         </div>
 
-        <!-- 2. SERVICE REQUESTS TAB -->
-        <div id="service-request" class="tab-content">
+        <!-- TAB 3: SERVICE REQUESTS (RENTER PORTAL) -->
+        <div id="service-view" class="tab-content">
             <div class="grid-2">
                 <div>
                     <div class="card">
@@ -786,49 +993,49 @@
                         </div>
                         <form id="service-form" onsubmit="handleServiceRequest(event)">
                             <div class="form-group">
-                                <label for="category">Category</label>
+                                <label for="category">Issue Category</label>
                                 <select id="category" required>
-                                    <option value="">Select issue category...</option>
-                                    <option value="plumbing">Plumbing / Leaks</option>
-                                    <option value="appliance">Appliance Repair</option>
-                                    <option value="electrical">Electrical / Lighting</option>
-                                    <option value="hvac">Heating / AC</option>
-                                    <option value="other">Other Maintenance</option>
+                                    <option value="">Select category...</option>
+                                    <option value="Plumbing">Plumbing / Leak</option>
+                                    <option value="Appliance">Appliance Repair</option>
+                                    <option value="Electrical">Electrical / Lighting</option>
+                                    <option value="HVAC">Heating & Air Conditioning</option>
+                                    <option value="Structural">Carpentry & Structural</option>
+                                    <option value="Other">Other Maintenance</option>
                                 </select>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="priority">Priority Level</label>
+                                    <label for="priority">Urgency Level</label>
                                     <select id="priority" required>
-                                        <option value="Low">Low (Standard Request)</option>
-                                        <option value="Medium" selected>Medium (Needs attention soon)</option>
-                                        <option value="High">Emergency / Urgent</option>
+                                        <option value="Low">Low - Standard Request</option>
+                                        <option value="Medium" selected>Medium - Normal Priority</option>
+                                        <option value="High">High - Emergency</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="permission">Entry Permission</label>
                                     <select id="permission" required>
-                                        <option value="Yes">Yes - Enter if away</option>
+                                        <option value="Yes">Yes - OK to enter if away</option>
                                         <option value="Call First">Call before entry</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="request-title">Brief Issue Title</label>
-                                <input type="text" id="request-title" placeholder="e.g. Kitchen sink leaking slowly" required>
+                                <label for="request-title">Title / Summary</label>
+                                <input type="text" id="request-title" placeholder="e.g. Dishwasher leaking onto floor" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="request-desc">Detailed Description</label>
-                                <textarea id="request-desc" placeholder="Please describe the issue in detail, including location and symptoms..." required></textarea>
+                                <label for="request-desc">Detailed Explanation</label>
+                                <textarea id="request-desc" placeholder="Provide as much detail as possible to help HB Design technicians..." required></textarea>
                             </div>
 
                             <div class="form-group">
-                                <label>Upload Photos (Optional)</label>
+                                <label>Attach Photos (Optional)</label>
                                 <div class="upload-box" onclick="triggerFileInput('service-file')">
-                                    <svg width="32" height="32" fill="none" stroke="var(--text-muted)" viewBox="0 0 24 24" style="margin: 0 auto 0.5rem auto; display:block;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                                     <span class="text-sm text-muted" id="file-label-service">Click to attach photos of the issue</span>
                                     <input type="file" id="service-file" style="display: none;" onchange="updateFileName(this, 'file-label-service')">
                                 </div>
@@ -842,276 +1049,609 @@
                 <div>
                     <div class="card">
                         <div class="card-header">
-                            <h2 class="card-title">Your Service Tickets</h2>
+                            <h2 class="card-title">Your Maintenance Tickets</h2>
                         </div>
                         <div id="ticket-list">
-                            <div class="card" style="box-shadow:none; border:1px solid var(--border); padding: 1.25rem; margin-bottom: 1rem;">
-                                <div class="flex-between mb-4">
-                                    <span class="badge badge-warning">In Progress</span>
-                                    <span class="text-sm text-muted">Ticket #REQ-8821</span>
-                                </div>
-                                <h3 style="font-size:1rem; font-weight:700;">AC Unit Noise</h3>
-                                <p class="text-sm text-muted mt-2">Submitted on Sep 02, 2026</p>
-                                <p class="text-sm mt-2">Technician assigned. Scheduled for visit tomorrow between 10 AM - 2 PM.</p>
-                            </div>
-
-                            <div class="card" style="box-shadow:none; border:1px solid var(--border); padding: 1.25rem;">
-                                <div class="flex-between mb-4">
-                                    <span class="badge badge-success">Completed</span>
-                                    <span class="text-sm text-muted">Ticket #REQ-8012</span>
-                                </div>
-                                <h3 style="font-size:1rem; font-weight:700;">Bathroom Light Fixture</h3>
-                                <p class="text-sm text-muted mt-2">Resolved on Aug 14, 2026</p>
-                                <p class="text-sm mt-2">Replaced LED transformer and bulb.</p>
-                            </div>
+                            <!-- Tickets populated dynamically -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 3. APPLY FOR HOUSING TAB -->
-        <div id="apply-housing" class="tab-content">
-            <div class="card" style="max-width: 800px; margin: 0 auto;">
-                <div class="card-header">
-                    <h2 class="card-title">Rental Housing Application</h2>
-                    <span class="text-sm text-muted">Haven Living Communities</span>
-                </div>
-
-                <!-- Step Bar -->
-                <div class="step-indicator">
-                    <div class="step active" id="step-node-1">
-                        <div class="step-number">1</div>
-                        <div class="step-label">Personal Details</div>
-                    </div>
-                    <div class="step" id="step-node-2">
-                        <div class="step-number">2</div>
-                        <div class="step-label">Income & Employment</div>
-                    </div>
-                    <div class="step" id="step-node-3">
-                        <div class="step-number">3</div>
-                        <div class="step-label">Documents & Submit</div>
-                    </div>
-                </div>
-
-                <form id="application-form" onsubmit="handleApplicationSubmit(event)">
-                    <!-- Step 1 Content -->
-                    <div id="step-1" class="app-step-content">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="app-fname">First Name</label>
-                                <input type="text" id="app-fname" placeholder="John" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="app-lname">Last Name</label>
-                                <input type="text" id="app-lname" placeholder="Smith" required>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="app-email">Email Address</label>
-                                <input type="email" id="app-email" placeholder="john.smith@example.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="app-phone">Phone Number</label>
-                                <input type="tel" id="app-phone" placeholder="(555) 000-0000" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="app-property">Desired Community / Property</label>
-                            <select id="app-property" required>
-                                <option value="">Select property...</option>
-                                <option value="highland">Highland Park Apartments (San Francisco, CA)</option>
-                                <option value="oakridge">Oakridge Gardens (Austin, TX)</option>
-                                <option value="skyline">Skyline Towers (Seattle, WA)</option>
-                            </select>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="app-bedroom">Unit Type</label>
-                                <select id="app-bedroom" required>
-                                    <option value="studio">Studio</option>
-                                    <option value="1bed" selected>1 Bedroom / 1 Bath</option>
-                                    <option value="2bed">2 Bedroom / 2 Bath</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="app-date">Desired Move-in Date</label>
-                                <input type="date" id="app-date" required>
-                            </div>
-                        </div>
-
-                        <button type="button" class="btn btn-primary" onclick="nextStep(2)">Continue to Step 2 &rarr;</button>
-                    </div>
-
-                    <!-- Step 2 Content -->
-                    <div id="step-2" class="app-step-content" style="display: none;">
-                        <div class="form-group">
-                            <label for="app-employer">Current Employer</label>
-                            <input type="text" id="app-employer" placeholder="Company Name Inc.">
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="app-title">Job Title</label>
-                                <input type="text" id="app-title" placeholder="Software Engineer">
-                            </div>
-                            <div class="form-group">
-                                <label for="app-income">Gross Monthly Income ($)</label>
-                                <input type="number" id="app-income" placeholder="6000">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="app-pets">Pets Info (If applicable)</label>
-                            <input type="text" id="app-pets" placeholder="e.g. 1 Dog (Golden Retriever, 40lbs)">
-                        </div>
-
-                        <div style="display: flex; gap: 10px;">
-                            <button type="button" class="btn btn-secondary" onclick="nextStep(1)">&larr; Back</button>
-                            <button type="button" class="btn btn-primary" onclick="nextStep(3)">Continue to Final Step &rarr;</button>
-                        </div>
-                    </div>
-
-                    <!-- Step 3 Content -->
-                    <div id="step-3" class="app-step-content" style="display: none;">
-                        <div class="form-group">
-                            <label>Government Issued ID (Driver's License / Passport)</label>
-                            <div class="upload-box" onclick="triggerFileInput('app-id-file')">
-                                <span class="text-sm text-muted" id="id-file-label">Click to upload Government ID</span>
-                                <input type="file" id="app-id-file" style="display:none;" onchange="updateFileName(this, 'id-file-label')">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Proof of Income (Recent Paystubs / W2)</label>
-                            <div class="upload-box" onclick="triggerFileInput('app-pay-file')">
-                                <span class="text-sm text-muted" id="pay-file-label">Click to upload Proof of Income</span>
-                                <input type="file" id="app-pay-file" style="display:none;" onchange="updateFileName(this, 'pay-file-label')">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label style="display:flex; align-items:flex-start; gap:8px; font-weight:normal; cursor:pointer;">
-                                <input type="checkbox" required style="margin-top: 4px;">
-                                <span>I authorize Haven Living to perform standard background and credit check screenings for this housing application.</span>
-                            </label>
-                        </div>
-
-                        <div style="display: flex; gap: 10px;">
-                            <button type="button" class="btn btn-secondary" onclick="nextStep(2)">&larr; Back</button>
-                            <button type="submit" class="btn btn-primary">Submit Housing Application ($35 Fee)</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- 4. LEASE & ACCOUNT TAB -->
-        <div id="account" class="tab-content">
+        <!-- TAB 4: PROPERTY MANAGER - MANAGE PROPERTIES -->
+        <div id="admin-properties-view" class="tab-content manager-only">
             <div class="grid-2">
-                <div class="card">
-                    <div class="card-header">
-                        <h2 class="card-title">Lease Summary</h2>
-                        <span class="badge badge-success">Active Lease</span>
-                    </div>
-                    <div class="history-list">
-                        <div class="history-item">
-                            <span class="text-muted">Resident Name</span>
-                            <strong>Jane Doe</strong>
+                <div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Add New Property Listing</h2>
+                            <span class="badge badge-info">Property Manager</span>
                         </div>
-                        <div class="history-item">
-                            <span class="text-muted">Unit Address</span>
-                            <strong>742 Evergreen Terr, Apt 4B</strong>
-                        </div>
-                        <div class="history-item">
-                            <span class="text-muted">Lease Term</span>
-                            <strong>Aug 1, 2026 - Jul 31, 2027</strong>
-                        </div>
-                        <div class="history-item">
-                            <span class="text-muted">Monthly Rent</span>
-                            <strong>$1,850.00</strong>
-                        </div>
-                        <div class="history-item">
-                            <span class="text-muted">Security Deposit</span>
-                            <strong>$1,850.00 (Held in Escrow)</strong>
-                        </div>
+                        <form id="add-property-form" onsubmit="handleAddProperty(event)">
+                            <div class="form-group">
+                                <label for="prop-title">Property Name / Title</label>
+                                <input type="text" id="prop-title" placeholder="e.g. Sunset Ridge Heights" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="prop-address">Full Address</label>
+                                <input type="text" id="prop-address" placeholder="123 Main St, Suite 400, San Francisco, CA" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="prop-price">Monthly Rent ($)</label>
+                                    <input type="number" id="prop-price" placeholder="2400" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="prop-type">Property Type</label>
+                                    <select id="prop-type">
+                                        <option value="Apartment">Apartment Complex</option>
+                                        <option value="Luxury Condominium">Luxury Condominium</option>
+                                        <option value="Single Family Home">Single Family Home</option>
+                                        <option value="Townhouse">Townhouse</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="prop-beds">Bedrooms</label>
+                                    <input type="text" id="prop-beds" placeholder="2 Beds" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="prop-baths">Bathrooms</label>
+                                    <input type="text" id="prop-baths" placeholder="2 Baths" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="prop-image">Picture Image URL</label>
+                                <input type="text" id="prop-image" placeholder="https://images.unsplash.com/photo-..." required>
+                                <span class="text-sm text-muted">Paste a high quality image link for the listing.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="prop-desc">Listing Description</label>
+                                <textarea id="prop-desc" placeholder="Describe the HB Design & Construction craftsmanship, architectural details, neighborhood amenities, etc." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-accent btn-block">+ Publish Property Listing</button>
+                        </form>
                     </div>
                 </div>
 
                 <div>
                     <div class="card">
                         <div class="card-header">
-                            <h2 class="card-title">Documents & Documents</h2>
+                            <h2 class="card-title">Manage Existing Properties</h2>
                         </div>
-                        <div class="history-list">
-                            <div class="history-item">
-                                <div class="history-info">
-                                    <strong>Lease Agreement PDF</strong>
-                                    <span>Signed on July 15, 2026</span>
-                                </div>
-                                <button class="btn btn-secondary text-sm" onclick="showToast('Downloading Lease Agreement...')">Download</button>
-                            </div>
-                            <div class="history-item">
-                                <div class="history-info">
-                                    <strong>Community Rules & Policy</strong>
-                                    <span>Updated 2026</span>
-                                </div>
-                                <button class="btn btn-secondary text-sm" onclick="showToast('Opening Document...')">View</button>
-                            </div>
+                        <div class="history-list" id="admin-properties-list">
+                            <!-- Dynamic admin list -->
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 class="card-title">Auto-Pay Settings</h2>
-                        </div>
-                        <p class="text-sm text-muted mb-4">Never miss a payment by enabling recurring automated rent payments on the 1st of each month.</p>
-                        <button class="btn btn-primary btn-block" onclick="showToast('Auto-Pay Preferences Saved!')">Enable Auto-Pay</button>
-                    </div>
+        <!-- TAB 5: PROPERTY MANAGER - VIEW APPLICATIONS -->
+        <div id="admin-apps-view" class="tab-content manager-only">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Submitted Rental Applications</h2>
+                    <span class="text-sm text-muted">Review incoming tenant applications for HB Design & Construction properties</span>
+                </div>
+                <div id="admin-applications-list">
+                    <!-- Dynamic applications -->
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Notification Toast -->
-    <div id="toast" class="toast">
-        <div class="toast-icon">&check;</div>
-        <span id="toast-message">Action processed successfully!</span>
+    <!-- APPLICATION MODAL -->
+    <div class="modal-overlay" id="apply-modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 class="card-title">Apply for Housing</h3>
+                <button class="close-modal" onclick="closeModal('apply-modal')">&times;</button>
+            </div>
+            <form id="housing-application-form" onsubmit="submitHousingApplication(event)">
+                <input type="hidden" id="app-target-property-id">
+                
+                <div class="form-group">
+                    <label>Property Applying For</label>
+                    <input type="text" id="app-target-property-name" readonly style="background-color: var(--bg-main); font-weight:700;">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="applicant-fname">First Name</label>
+                        <input type="text" id="applicant-fname" placeholder="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicant-lname">Last Name</label>
+                        <input type="text" id="applicant-lname" placeholder="Smith" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="applicant-email">Email Address</label>
+                        <input type="email" id="applicant-email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicant-phone">Phone Number</label>
+                        <input type="tel" id="applicant-phone" placeholder="(555) 019-2831" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="applicant-income">Monthly Gross Income ($)</label>
+                        <input type="number" id="applicant-income" placeholder="6500" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicant-movein">Desired Move-in Date</label>
+                        <input type="date" id="applicant-movein" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-employer">Employer / Occupation</label>
+                    <input type="text" id="applicant-employer" placeholder="Software Engineer at TechCorp" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Identification or Proof of Income</label>
+                    <div class="upload-box" onclick="triggerFileInput('applicant-file')">
+                        <span class="text-sm text-muted" id="file-label-app">Click to attach Paystubs or ID</span>
+                        <input type="file" id="applicant-file" style="display: none;" onchange="updateFileName(this, 'file-label-app')">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Submit Application to HB Design</button>
+            </form>
+        </div>
     </div>
 
-    <!-- Interactive Script -->
+    <!-- AUTHENTICATION MODAL (LOGIN / SIGN UP) -->
+    <div class="modal-overlay" id="auth-modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 class="card-title" id="auth-modal-title">Log In to HB Portal</h3>
+                <button class="close-modal" onclick="closeModal('auth-modal')">&times;</button>
+            </div>
+            
+            <div class="nav-tabs" style="margin-bottom: 1rem;">
+                <button class="tab-btn active" id="auth-tab-login" onclick="toggleAuthTab('login')">Log In</button>
+                <button class="tab-btn" id="auth-tab-signup" onclick="toggleAuthTab('signup')">Sign Up</button>
+            </div>
+
+            <form id="auth-form" onsubmit="handleAuthSubmit(event)">
+                <input type="hidden" id="auth-mode" value="login">
+
+                <div class="form-group hidden" id="signup-name-group">
+                    <label for="auth-name">Full Name</label>
+                    <input type="text" id="auth-name" placeholder="Alex Morgan">
+                </div>
+
+                <div class="form-group">
+                    <label for="auth-email">Email Address</label>
+                    <input type="email" id="auth-email" placeholder="alex@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="auth-phone">Phone Number</label>
+                    <input type="tel" id="auth-phone" placeholder="(555) 234-5678" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="auth-password">Password</label>
+                    <input type="password" id="auth-password" placeholder="••••••••" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="auth-role-select">Account Type</label>
+                    <select id="auth-role-select">
+                        <option value="renter">Renter / Resident</option>
+                        <option value="manager">Property Manager (HB Design Staff)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="auth-submit-btn">Log In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-icon">&check;</div>
+        <span id="toast-message">Action completed successfully!</span>
+    </div>
+
+    <!-- Application Script Logic -->
     <script>
-        // Set Default Date for Rent Payment
+        // GLOBAL STATE STORE
+        const state = {
+            currentRole: 'renter', // 'renter' or 'manager'
+            user: {
+                name: 'Jane Doe',
+                email: 'jane.doe@example.com',
+                phone: '(555) 839-2019',
+                unit: 'Apt 4B - Highland Park',
+                isLoggedIn: true
+            },
+            properties: [
+                {
+                    id: 1,
+                    title: "Highland Park Residences",
+                    address: "742 Evergreen Terr, San Francisco, CA",
+                    price: 1850,
+                    type: "Apartment",
+                    beds: "2 Beds",
+                    baths: "2 Baths",
+                    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80",
+                    description: "Built and custom-finished by HB Design & Construction. Features hardwood floors, quartz kitchen island, and energy-efficient climate control."
+                },
+                {
+                    id: 2,
+                    title: "Oakridge Architectural Lofts",
+                    address: "1040 Modernist Way, Austin, TX",
+                    price: 2400,
+                    type: "Luxury Condominium",
+                    beds: "3 Beds",
+                    baths: "2.5 Baths",
+                    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+                    description: "Modernist design featuring soaring ceilings, concrete accent walls, and floor-to-ceiling glass designed by HB Construction."
+                },
+                {
+                    id: 3,
+                    title: "Skyline Glass Towers",
+                    address: "88 Harbor View Blvd, Seattle, WA",
+                    price: 2100,
+                    type: "Apartment",
+                    beds: "1 Bed",
+                    baths: "1 Bath",
+                    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
+                    description: "Waterfront high-rise apartment with premium sound isolation, custom cabinetry, and concierge services."
+                }
+            ],
+            applications: [
+                {
+                    id: 101,
+                    propertyName: "Oakridge Architectural Lofts",
+                    applicantName: "Michael Chang",
+                    email: "m.chang@example.com",
+                    phone: "(555) 492-1029",
+                    income: 7500,
+                    moveIn: "2026-10-01",
+                    employer: "Senior Architect",
+                    status: "Pending Review"
+                },
+                {
+                    id: 102,
+                    propertyName: "Highland Park Residences",
+                    applicantName: "Sarah Jenkins",
+                    email: "sarah.j@example.com",
+                    phone: "(555) 902-3311",
+                    income: 6200,
+                    moveIn: "2026-11-15",
+                    employer: "Product Designer",
+                    status: "Approved"
+                }
+            ],
+            tickets: [
+                {
+                    id: "REQ-8821",
+                    title: "HVAC Unit Noise",
+                    category: "HVAC",
+                    priority: "Medium",
+                    date: "Sep 02, 2026",
+                    status: "In Progress",
+                    desc: "Technician assigned. Scheduled visit tomorrow."
+                }
+            ],
+            payments: [
+                {
+                    title: "September Rent",
+                    date: "Paid Sep 01, 2026",
+                    amount: 1850.00,
+                    status: "Paid"
+                }
+            ]
+        };
+
+        // INITIALIZATION
         document.addEventListener('DOMContentLoaded', () => {
-            const dateInput = document.getElementById('payment-date');
-            if (dateInput) {
-                const today = new Date().toISOString().split('T')[0];
-                dateInput.value = today;
-            }
+            renderProperties();
+            renderTickets();
+            renderApplications();
+            renderAdminPropertiesList();
+            
+            // Set payment date default
+            const payDate = document.getElementById('payment-date');
+            if (payDate) payDate.value = new Date().toISOString().split('T')[0];
         });
 
-        // Tab Switching Logic
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
+        // VIEW & ROLE SWITCHING
+        function setRole(role) {
+            state.currentRole = role;
+            document.getElementById('role-renter-btn').classList.toggle('active', role === 'renter');
+            document.getElementById('role-manager-btn').classList.toggle('active', role === 'manager');
 
-            document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
+            const renterOnly = document.querySelectorAll('.renter-only');
+            const managerOnly = document.querySelectorAll('.manager-only');
+
+            if (role === 'manager') {
+                renterOnly.forEach(el => el.classList.add('hidden'));
+                managerOnly.forEach(el => el.classList.remove('hidden'));
+                
+                // Update Hero
+                document.getElementById('hero-welcome').innerText = "Property Manager Dashboard";
+                document.getElementById('hero-subtitle').innerText = "HB Design & Construction Staff Portal";
+                document.getElementById('stat-rent-box').querySelector('span').innerText = "Active Properties";
+                document.getElementById('stat-rent-val').innerText = state.properties.length;
+                document.getElementById('stat-req-val').innerText = `${state.applications.length} Pending`;
+
+                switchTab('admin-properties-view');
+                showToast("Switched to Property Manager View");
+            } else {
+                renterOnly.forEach(el => el.classList.remove('hidden'));
+                managerOnly.forEach(el => el.classList.add('hidden'));
+
+                // Update Hero
+                document.getElementById('hero-welcome').innerText = `Welcome Back, ${state.user.name.split(' ')[0]}`;
+                document.getElementById('hero-subtitle').innerText = `${state.user.unit}`;
+                document.getElementById('stat-rent-box').querySelector('span').innerText = "Rent Due (Oct 1)";
+                document.getElementById('stat-rent-val').innerText = "$1,850.00";
+                document.getElementById('stat-req-val').innerText = `${state.tickets.length} Open`;
+
+                switchTab('properties-view');
+                showToast("Switched to Renter View");
+            }
         }
 
-        // Amount Selection Logic for Rent
-        function selectAmount(element, amount, isCustom = false) {
-            document.querySelectorAll('.payment-option').forEach(opt => {
-                opt.classList.remove('selected');
+        function switchTab(viewId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+
+            const targetView = document.getElementById(viewId);
+            if (targetView) targetView.classList.add('active');
+
+            // Set Active Tab Button
+            const btns = document.querySelectorAll('.tab-btn');
+            btns.forEach(btn => {
+                if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(viewId)) {
+                    btn.classList.add('active');
+                }
             });
+        }
+
+        // RENDER FUNCTIONS
+        function renderProperties() {
+            const container = document.getElementById('properties-grid');
+            container.innerHTML = state.properties.map(prop => `
+                <div class="property-card">
+                    <div class="property-img-wrap">
+                        <img src="${prop.image}" alt="${prop.title}" class="property-img" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80'">
+                        <span class="property-status-tag badge-success badge">Available</span>
+                        <div class="property-price-tag">$${prop.price.toLocaleString()}/mo</div>
+                    </div>
+                    <div class="property-body">
+                        <h3 class="property-title">${prop.title}</h3>
+                        <div class="property-address">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                            ${prop.address}
+                        </div>
+                        <div class="property-specs">
+                            <span>${prop.beds}</span> &bull; 
+                            <span>${prop.baths}</span> &bull; 
+                            <span>${prop.type}</span>
+                        </div>
+                        <p class="property-desc">${prop.description}</p>
+                        <button class="btn btn-primary btn-block" onclick="openApplyModal(${prop.id})">Apply for Housing</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderAdminPropertiesList() {
+            const container = document.getElementById('admin-properties-list');
+            container.innerHTML = state.properties.map(p => `
+                <div class="history-item">
+                    <div class="history-info">
+                        <strong>${p.title}</strong>
+                        <span>${p.address} &bull; $${p.price}/mo</span>
+                    </div>
+                    <button class="btn btn-secondary btn-sm" onclick="removeProperty(${p.id})">Remove</button>
+                </div>
+            `).join('');
+        }
+
+        function renderApplications() {
+            const container = document.getElementById('admin-applications-list');
+            document.getElementById('app-count-badge').innerText = state.applications.length;
+
+            if (state.applications.length === 0) {
+                container.innerHTML = '<p class="text-muted text-sm">No applications submitted yet.</p>';
+                return;
+            }
+
+            container.innerHTML = state.applications.map(app => `
+                <div class="card" style="box-shadow:none; border:1px solid var(--border); padding: 1.25rem; margin-bottom:1rem;">
+                    <div class="flex-between mb-4">
+                        <span class="badge ${app.status === 'Approved' ? 'badge-success' : 'badge-warning'}">${app.status}</span>
+                        <span class="text-sm text-muted">Applied for: <strong>${app.propertyName}</strong></span>
+                    </div>
+                    <h3 style="font-size:1.1rem; font-weight:700;">${app.applicantName}</h3>
+                    <div class="form-row mt-2 text-sm">
+                        <div><strong>Email:</strong> ${app.email}</div>
+                        <div><strong>Phone:</strong> ${app.phone}</div>
+                        <div><strong>Monthly Income:</strong> $${Number(app.income).toLocaleString()}</div>
+                        <div><strong>Occupation:</strong> ${app.employer}</div>
+                        <div><strong>Target Move-in:</strong> ${app.moveIn}</div>
+                    </div>
+                    <div style="display:flex; gap:10px; margin-top:1rem;">
+                        <button class="btn btn-primary btn-sm" onclick="updateAppStatus(${app.id}, 'Approved')">Approve Tenant</button>
+                        <button class="btn btn-secondary btn-sm" onclick="updateAppStatus(${app.id}, 'Rejected')">Decline Application</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderTickets() {
+            const container = document.getElementById('ticket-list');
+            container.innerHTML = state.tickets.map(t => `
+                <div class="card" style="box-shadow:none; border:1px solid var(--border); padding: 1.25rem; margin-bottom: 1rem;">
+                    <div class="flex-between mb-4">
+                        <span class="badge ${t.status === 'Completed' ? 'badge-success' : 'badge-warning'}">${t.status}</span>
+                        <span class="text-sm text-muted">${t.id}</span>
+                    </div>
+                    <h3 style="font-size:1rem; font-weight:700;">${t.title}</h3>
+                    <p class="text-sm text-muted mt-2">Submitted: ${t.date} &bull; Urgency: ${t.priority}</p>
+                    <p class="text-sm mt-2">${t.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        // HANDLERS & ACTIONS
+        function handleAddProperty(e) {
+            e.preventDefault();
+            const newProp = {
+                id: Date.now(),
+                title: document.getElementById('prop-title').value,
+                address: document.getElementById('prop-address').value,
+                price: parseFloat(document.getElementById('prop-price').value),
+                type: document.getElementById('prop-type').value,
+                beds: document.getElementById('prop-beds').value,
+                baths: document.getElementById('prop-baths').value,
+                image: document.getElementById('prop-image').value,
+                description: document.getElementById('prop-desc').value
+            };
+
+            state.properties.unshift(newProp);
+            renderProperties();
+            renderAdminPropertiesList();
+            document.getElementById('add-property-form').reset();
+            showToast("New property published to HB listings!");
+        }
+
+        function removeProperty(id) {
+            state.properties = state.properties.filter(p => p.id !== id);
+            renderProperties();
+            renderAdminPropertiesList();
+            showToast("Property removed.");
+        }
+
+        function openApplyModal(propId) {
+            const prop = state.properties.find(p => p.id === propId);
+            if (!prop) return;
+
+            document.getElementById('app-target-property-id').value = prop.id;
+            document.getElementById('app-target-property-name').value = `${prop.title} ($${prop.price}/mo)`;
+            
+            // Pre-fill user details if logged in
+            if (state.user.isLoggedIn) {
+                const names = state.user.name.split(' ');
+                document.getElementById('applicant-fname').value = names[0] || '';
+                document.getElementById('applicant-lname').value = names[1] || '';
+                document.getElementById('applicant-email').value = state.user.email;
+                document.getElementById('applicant-phone').value = state.user.phone;
+            }
+
+            openModal('apply-modal');
+        }
+
+        function submitHousingApplication(e) {
+            e.preventDefault();
+            const propName = document.getElementById('app-target-property-name').value;
+            const fname = document.getElementById('applicant-fname').value;
+            const lname = document.getElementById('applicant-lname').value;
+
+            const newApp = {
+                id: Date.now(),
+                propertyName: propName,
+                applicantName: `${fname} ${lname}`,
+                email: document.getElementById('applicant-email').value,
+                phone: document.getElementById('applicant-phone').value,
+                income: document.getElementById('applicant-income').value,
+                moveIn: document.getElementById('applicant-movein').value,
+                employer: document.getElementById('applicant-employer').value,
+                status: "Pending Review"
+            };
+
+            state.applications.unshift(newApp);
+            renderApplications();
+            closeModal('apply-modal');
+            document.getElementById('housing-application-form').reset();
+            showToast("Application submitted to HB Design & Construction!");
+        }
+
+        function updateAppStatus(appId, status) {
+            const app = state.applications.find(a => a.id === appId);
+            if (app) {
+                app.status = status;
+                renderApplications();
+                showToast(`Application marked as ${status}`);
+            }
+        }
+
+        function handlePayment(e) {
+            e.preventDefault();
+            const amount = document.getElementById('payment-amount').value;
+            
+            state.payments.unshift({
+                title: "Rent Payment",
+                date: "Paid Today",
+                amount: parseFloat(amount),
+                status: "Paid"
+            });
+
+            // Update UI
+            const container = document.getElementById('payment-history-list');
+            const itemHtml = `
+                <div class="history-item">
+                    <div class="history-info">
+                        <strong>Rent Payment</strong>
+                        <span>Paid Today</span>
+                    </div>
+                    <div>
+                        <span class="badge badge-success">Paid</span>
+                        <div class="history-amount mt-2">$${parseFloat(amount).toFixed(2)}</div>
+                    </div>
+                </div>
+            `;
+            container.innerHTML = itemHtml + container.innerHTML;
+            document.getElementById('total-statement-due').innerText = "$0.00";
+            showToast(`Payment of $${amount} successfully processed!`);
+        }
+
+        function handleServiceRequest(e) {
+            e.preventDefault();
+            const title = document.getElementById('request-title').value;
+            const category = document.getElementById('category').value;
+            const priority = document.getElementById('priority').value;
+            const desc = document.getElementById('request-desc').value;
+
+            const ticket = {
+                id: `REQ-${Math.floor(1000 + Math.random() * 9000)}`,
+                title,
+                category,
+                priority,
+                date: "Today",
+                status: "In Progress",
+                desc
+            };
+
+            state.tickets.unshift(ticket);
+            renderTickets();
+            document.getElementById('service-form').reset();
+            showToast("Maintenance ticket submitted!");
+        }
+
+        function selectAmount(element, amount, isCustom = false) {
+            document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('selected'));
             element.classList.add('selected');
 
             const amountInput = document.getElementById('payment-amount');
@@ -1123,66 +1663,55 @@
             }
         }
 
-        // Form Handling Functions
-        function handlePayment(e) {
-            e.preventDefault();
-            const amount = document.getElementById('payment-amount').value;
-            showToast(`Success! Payment of $${amount} submitted.`);
-        }
-
-        function handleServiceRequest(e) {
-            e.preventDefault();
-            const title = document.getElementById('request-title').value;
-            const category = document.getElementById('category').value;
-            const priority = document.getElementById('priority').value;
-
-            // Append to DOM simulation
-            const ticketList = document.getElementById('ticket-list');
-            const newTicket = document.createElement('div');
-            newTicket.className = 'card';
-            newTicket.style.cssText = 'box-shadow:none; border:1px solid var(--border); padding: 1.25rem; margin-bottom: 1rem;';
-            newTicket.innerHTML = `
-                <div class="flex-between mb-4">
-                    <span class="badge badge-info">Submitted</span>
-                    <span class="text-sm text-muted">Ticket #REQ-${Math.floor(1000 + Math.random() * 9000)}</span>
-                </div>
-                <h3 style="font-size:1rem; font-weight:700;">${title}</h3>
-                <p class="text-sm text-muted mt-2">Submitted Today &bull; Priority: ${priority}</p>
-                <p class="text-sm mt-2">Your request has been logged and assigned to the maintenance team.</p>
-            `;
+        // AUTHENTICATION LOGIC
+        function toggleAuthTab(mode) {
+            document.getElementById('auth-mode').value = mode;
+            document.getElementById('auth-tab-login').classList.toggle('active', mode === 'login');
+            document.getElementById('auth-tab-signup').classList.toggle('active', mode === 'signup');
             
-            ticketList.insertBefore(newTicket, ticketList.firstChild);
-            document.getElementById('service-form').reset();
-            showToast('Service ticket created successfully!');
+            document.getElementById('signup-name-group').classList.toggle('hidden', mode === 'login');
+            document.getElementById('auth-modal-title').innerText = mode === 'login' ? "Log In to HB Portal" : "Create HB Resident/Manager Account";
+            document.getElementById('auth-submit-btn').innerText = mode === 'login' ? "Log In" : "Create Account";
         }
 
-        // Multi-Step Application Logic
-        function nextStep(stepNumber) {
-            document.querySelectorAll('.app-step-content').forEach(step => step.style.display = 'none');
-            document.getElementById(`step-${stepNumber}`).style.display = 'block';
-
-            // Update Indicator Header
-            for(let i = 1; i <= 3; i++) {
-                const node = document.getElementById(`step-node-${i}`);
-                node.classList.remove('active', 'completed');
-                if (i === stepNumber) {
-                    node.classList.add('active');
-                } else if (i < stepNumber) {
-                    node.classList.add('completed');
-                }
-            }
-        }
-
-        function handleApplicationSubmit(e) {
+        function handleAuthSubmit(e) {
             e.preventDefault();
-            showToast('Housing application submitted successfully!');
-            setTimeout(() => {
-                nextStep(1);
-                document.getElementById('application-form').reset();
-            }, 1500);
+            const email = document.getElementById('auth-email').value;
+            const phone = document.getElementById('auth-phone').value;
+            const role = document.getElementById('auth-role-select').value;
+            const mode = document.getElementById('auth-mode').value;
+            const name = mode === 'signup' ? document.getElementById('auth-name').value : email.split('@')[0];
+
+            state.user = {
+                name: name,
+                email: email,
+                phone: phone,
+                unit: role === 'manager' ? "HB Staff Member" : "Apt 4B - Highland Park",
+                isLoggedIn: true
+            };
+
+            // Update Header Display
+            document.getElementById('user-name-display').innerText = `${state.user.name} (${state.user.unit})`;
+            document.getElementById('user-avatar').innerText = state.user.name.substring(0, 2).toUpperCase();
+
+            closeModal('auth-modal');
+            setRole(role);
+            showToast(`Welcome, ${state.user.name}!`);
         }
 
-        // Helper for Upload Boxes
+        // HELPERS
+        function openAuthModal() {
+            openModal('auth-modal');
+        }
+
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
         function triggerFileInput(id) {
             document.getElementById(id).click();
         }
@@ -1193,16 +1722,13 @@
             }
         }
 
-        // Toast Notification System
         function showToast(message) {
             const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toast-message');
-            toastMsg.innerText = message;
+            document.getElementById('toast-message').innerText = message;
             toast.classList.add('show');
-
             setTimeout(() => {
                 toast.classList.remove('show');
-            }, 3500);
+            }, 3000);
         }
     </script>
 </body>
